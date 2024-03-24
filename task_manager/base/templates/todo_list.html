@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.description }}
+            <form action="{% url 'complete_task' task.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Complete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

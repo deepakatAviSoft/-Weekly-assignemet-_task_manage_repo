@@ -22,5 +22,8 @@ urlpatterns = [
     path('', include('base.urls')),
     path('login/', include('base.urls')),
     path('home/', include('base.urls')),
+    path('todo/', include('base.urls')),
+    path('complete/<int:task_id>/', include('base.urls')),
+
 
 ]
